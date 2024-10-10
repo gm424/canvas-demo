@@ -45,14 +45,14 @@ export default {
     //获取奖品列表
 
     this.list = [
-      { id: '1', prize_name: '乐豆', number: 45, image: 'https://img.picui.cn/free/2024/10/10/6706b951d4e5f.jpg' },
-      { id: '2', prize_name: '乐豆', number: 945, image: 'https://img.picui.cn/free/2024/10/10/6706b951d4e5f.jpg' },
-      { id: '3', prize_name: '乐豆', number: 745, image: 'https://img.picui.cn/free/2024/10/10/6706b951d4e5f.jpg' },
-      { id: '4', prize_name: '乐豆', number: 445, image: 'https://img.picui.cn/free/2024/10/10/6706b951d4e5f.jpg' },
-      { id: '5', prize_name: '乐豆', number: 545, image: 'https://img.picui.cn/free/2024/10/10/6706b951d4e5f.jpg' },
-      { id: '6', prize_name: '乐豆', number: 345, image: 'https://img.picui.cn/free/2024/10/10/6706b951d4e5f.jpg' },
-      { id: '7', prize_name: '乐豆', number: 145, image: 'https://img.picui.cn/free/2024/10/10/6706b951d4e5f.jpg' },
-      { id: '8', prize_name: '乐豆', number: 245, image: 'https://img.picui.cn/free/2024/10/10/6706b951d4e5f.jpg' },
+      { id: '1', prize_name: '乐豆1', number: 45, image: 'https://img.picui.cn/free/2024/10/10/6706b951d4e5f.jpg' },
+      { id: '2', prize_name: '乐豆2', number: 945, image: 'https://img.picui.cn/free/2024/10/10/6706b951d4e5f.jpg' },
+      { id: '3', prize_name: '乐豆3', number: 745, image: 'https://img.picui.cn/free/2024/10/10/6706b951d4e5f.jpg' },
+      { id: '4', prize_name: '乐豆4', number: 445, image: 'https://img.picui.cn/free/2024/10/10/6706b951d4e5f.jpg' },
+      { id: '5', prize_name: '乐豆5', number: 545, image: 'https://img.picui.cn/free/2024/10/10/6706b951d4e5f.jpg' },
+      { id: '6', prize_name: '乐豆6', number: 345, image: 'https://img.picui.cn/free/2024/10/10/6706b951d4e5f.jpg' },
+      { id: '7', prize_name: '乐豆7', number: 145, image: 'https://img.picui.cn/free/2024/10/10/6706b951d4e5f.jpg' },
+      { id: '8', prize_name: '乐豆8', number: 245, image: 'https://img.picui.cn/free/2024/10/10/6706b951d4e5f.jpg' },
     ]; // 奖品列表数据
     this.number_of_draws = 9; // 该用户剩余抽奖次数
   },

@@ -13,6 +13,7 @@
           <canvas class="item" ref="wheelcanvas" width="422px" height="422px"></canvas>
           <img class="pointer" src="https://img.picui.cn/free/2024/10/10/6706bb63cb20a.jpg" @click="clickRotate" />
         </div>
+        <div v-if="prize">恭喜你抽中了：{{ prize }}</div>
       </div>
     </div>
   </div>
@@ -27,13 +28,14 @@ export default {
     return {
       turnplate: {
         restaraunts: ['天翼高清10元', '智能音箱', '智能台灯', '300元购机优惠券', '200元购机优惠券', '红包'],
-        colors: ['#ffecd6', '#ffdcc5', '#ffecd6', '#ffdcc5', '#ffecd6', '#ffdcc5', '#ffecd6'],
+        colors: ['#ffecd6', '#ffdcc5', '#ffecd6', '#ffdcc5', '#ffecd6', '#ffdcc5'],
         outsideRadius: 168,
         textRadius: 140,
         insideRadius: 30,
         startAngle: 0,
       },
       count: 0,
+      prize: null,
     };
   },
   methods: {
@@ -46,7 +48,7 @@ export default {
         ctx.clearRect(0, 0, 422, 422);
         ctx.strokeStyle = '#f5b599';
         ctx.font = 'bold 16px Helvetica';
-        for (let i = 0; i < this.turnplate.restaraunts.length; i++) {
+        for (let i = 0; i < 6; i++) {
           const angle = this.turnplate.startAngle + i * arc;
           console.log('angle', angle);
           ctx.fillStyle = this.turnplate.colors[i];
@@ -94,6 +96,7 @@ export default {
     getRadom(x, y) {
       const min = Math.ceil(x);
       const max = Math.floor(y);
+      console.log('getRadom', Math.floor(Math.random() * (max - min + 1)) + min);
       return Math.floor(Math.random() * (max - min + 1)) + min;
     },
     getPrize(num) {
@@ -123,13 +126,15 @@ export default {
     },
     rotate(angle, prize) {
       console.log(`Rotating to angle: ${angle}, prize: ${prize}`);
+      this.prize = prize;
       // 这里写你的旋转逻辑
     },
     clickRotate() {
       // 获取奖品总数
       const totalPrizes = this.turnplate.restaraunts.length;
       // 生成一个随机的奖品索引
-      const prizeIndex = this.getRadom(0, totalPrizes - 1);
+      // const prizeIndex = this.getRadom(0, totalPrizes - 1);
+      const prizeIndex = 0;
 
       // 每个奖品的角度（以弧度表示）
       const anglePerPrize = 360 / totalPrizes;
@@ -139,8 +144,8 @@ export default {
       // 我们希望转盘至少转 3 圈，可以增加这个值来调整转动圈数
       const baseRotation = 360 * 3;
 
-      // 由于指针初始指向 0 度（12 点钟方向），目标角度为 baseRotation + (360 - prizeAngle)
-      const finalRotation = baseRotation + (225 - prizeAngle);
+      // 由于指针初始指向 0 度（12 点钟方向），目标角度为 baseRotation + (240 - prizeAngle)
+      const finalRotation = baseRotation + (240 - prizeAngle);
 
       // 应用旋转动画
       this.$refs.wheelcanvas.style.transition = 'transform 5s ease-out';
